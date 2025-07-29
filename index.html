@@ -548,7 +548,7 @@
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>"As a small business owner, I used to dread tax season. But ever since I started working with Atul Kumar Rawat, it's been a breeze. He breaks down everything in simple terms, is incredibly responsive, and always ensures I'm aware of all relevant deductions. His 15+ years of experience truly show in his meticulous work and proactive advice.</span>
+                  <span>As a small business owner, I used to dread tax season. But ever since I started working with Atul Kumar Rawat, it's been a breeze. He breaks down everything in simple terms, is incredibly responsive, and always ensures I'm aware of all relevant deductions. His 15+ years of experience truly show in his meticulous work and proactive advice.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -612,8 +612,6 @@
     </section><!-- /Testimonials Section -->
 
     
-
-
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
@@ -734,6 +732,19 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    // Fallback Swiper initialization for testimonials section
+    window.addEventListener('load', function() {
+      var testimonialSwiper = document.querySelector('.swiper.init-swiper');
+      if (testimonialSwiper && typeof Swiper !== 'undefined') {
+        var configScript = testimonialSwiper.querySelector('.swiper-config');
+        if (configScript) {
+          var config = JSON.parse(configScript.innerHTML.trim());
+          new Swiper(testimonialSwiper, config);
+        }
+      }
+    });
+  </script>
   <script>
     // GSAP Counter Animation for Stats Section
     document.addEventListener('DOMContentLoaded', function() {
